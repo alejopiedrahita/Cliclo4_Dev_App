@@ -1,4 +1,4 @@
-package com.example.cliclo4_dev_app;
+package com.example.finalwireframe;
 
 import org.junit.Test;
 
