@@ -27,9 +27,8 @@ public class FindPlace extends AppCompatActivity {
             public void onClick(View v) {
                 // Obtener datos de la vista
                 String keyWords = txtKeyWords.getText().toString();
-                // Instanciar clase
+                // Instanciar clase e invocar métodos
                 ValidacionCampos vf = new ValidacionCampos();
-                // Invocar métodos
                 vf.showToastMethod(FindPlace.this);
                 vf.formBusqueda(keyWords);
             }

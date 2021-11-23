@@ -27,9 +27,8 @@ public class ReaderCode extends AppCompatActivity {
             public void onClick(View v) {
                 // Obtener datos de la vista
                 String keyTag = txtKeyTag.getText().toString();
-                // Instanciar clase
+                // Instanciar clase e invocar métodos
                 ValidacionCampos vf = new ValidacionCampos();
-                // Invocar métodos
                 vf.showToastMethod(ReaderCode.this);
                 vf.formEtiqueta(keyTag);
             }
