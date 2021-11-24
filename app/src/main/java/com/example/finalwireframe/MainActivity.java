@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
         vista_home.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { enviar_home();}
+            public void onClick(View v) {
+                enviar_home();
+            }
         });
-
     }
 
     public void enviar_home() {
-        Intent intent = new Intent(this, home.class);
+        Intent intent = new Intent(this, Home.class);
         startActivity(intent);
     }
 }
