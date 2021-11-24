@@ -11,6 +11,7 @@ import android.widget.Button;
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRegisterPlace, btnFindPlace, btnReaderCode, btnFavoritePlaces;
+    private Intent intent;
 
     public void proccessEvents(int key) {
         switch (key) {
@@ -55,5 +56,42 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         proccessEvents(v.getId());
+    }
+
+    // Crear Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        invalidateOptionsMenu(menu);
+        return true;
+    }
+
+    // Ocultar opcion actual
+    public boolean invalidateOptionsMenu(Menu menu) {
+        menu.findItem(R.id.itemHome).setVisible(false);
+        menu.findItem(R.id.itemRatingPlace).setVisible(false);
+        return true;
+    }
+
+    // Funcionalidad Menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itemHome:
+                intent = new Intent(this, Home.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemRegisterPlace:
+                intent = new Intent(this, RegisterPlace.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemFindPlace:
+                intent = new Intent(this, FindPlace.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemReaderCode:
+                intent = new Intent(this, ReaderCode.class);
+                startActivity(intent);
+                return true;
+        }
+        return true;
     }
 }
