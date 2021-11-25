@@ -1,16 +1,21 @@
 package com.example.finalwireframe;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 
 public class RegisterPlace extends AppCompatActivity {
 
     // Declarar atributos
     private EditText txtPlaceName, txtHeritageType, txtKeyWordName, txtKeyTagName, txtLocationPlace;
     private Button btnRegisterNewPlace;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +47,42 @@ public class RegisterPlace extends AppCompatActivity {
                 vf.formRegistros(placeName, heritageType, keyWord, keyTag, locationPlace);
             }
         });
+    }
+
+    // Crear Menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        invalidateOptionsMenu(menu);
+        return true;
+    }
+
+    // Ocultar opcion actual
+    public boolean invalidateOptionsMenu(Menu menu) {
+        menu.findItem(R.id.itemRegisterPlace).setVisible(false);
+        menu.findItem(R.id.itemRatingPlace).setVisible(false);
+        return true;
+    }
+
+    // Funcionalidad Menu
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.itemHome:
+                intent = new Intent(this, Home.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemRegisterPlace:
+                intent = new Intent(this, RegisterPlace.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemFindPlace:
+                intent = new Intent(this, FindPlace.class);
+                startActivity(intent);
+                return true;
+            case R.id.itemReaderCode:
+                intent = new Intent(this, ReaderCode.class);
+                startActivity(intent);
+                return true;
+        }
+        return true;
     }
 }
