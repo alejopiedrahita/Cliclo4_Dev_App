@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 public class FindPlace extends AppCompatActivity {
 
     // Declarar atributos
@@ -35,6 +36,8 @@ public class FindPlace extends AppCompatActivity {
                 ValidacionCampos vf = new ValidacionCampos();
                 vf.showToastMethod(FindPlace.this);
                 vf.formBusqueda(keyWords);
+                DataProcess dp = new DataProcess();
+                dp.contadorKeyWords(keyWords);
             }
         });
     }

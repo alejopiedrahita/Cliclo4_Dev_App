@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRegisterPlace, btnFindPlace, btnReaderCode, btnFavoritePlaces;
