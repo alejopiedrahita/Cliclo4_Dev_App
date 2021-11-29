@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundfinal"
+    android:background="@drawable/buscarl"
     tools:context=".FindPlace">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="UBICACIÓN DEL LUGAR"
-        android:textColor="#000000"
+        android:textColor="#002b41"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="BUSCAR LUGAR"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="NOMBRE DEL LUGAR"
-        android:textColor="#000000"
+        android:textColor="#002b41"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="RATING DEL LUGAR"
-        android:textColor="#000000"
+        android:textColor="#002b41"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/referenceplace" />
+        app:srcCompat="@drawable/lugar" />
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
@@ -89,7 +89,7 @@
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="#254D32"
+        android:background="#002b41"
         android:text="BUSCAR LUGAR"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
@@ -98,31 +98,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginBottom="32dp"
-        android:background="#254D32"
-        android:text="HOME"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="32dp"
-        android:background="#254D32"
-        android:text="USER"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
