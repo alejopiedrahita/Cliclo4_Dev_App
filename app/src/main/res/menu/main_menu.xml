@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MenuBar">
 
     <item
         android:id="@+id/itemHome"
-        android:title="Inicio" />
+        android:title="Inicio"
+        android:icon="@drawable/ic_menubar_home"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/itemRegisterPlace"
-        android:title="Registrar Lugar" />
+        android:title="Registrar Lugar"
+        android:icon="@drawable/ic_menubar_add_place"
+        android:orderInCategory="2"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/itemFindPlace"
-        android:title="Buscar Lugar" />
+        android:title="Buscar Lugar"
+        android:icon="@drawable/ic_menubar_search_place"
+        android:orderInCategory="3"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/itemReaderCode"
-        android:title="Etiquetar Lugar" />
+        android:title="Etiquetar Lugar"
+        android:icon="@drawable/ic_menubar_qrcode_place"
+        android:orderInCategory="4"
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/itemRatingPlace"
-        android:title="Clasificar Lugar" />
+        android:id="@+id/itemAbout"
+        android:title="Acerca de"
+        android:orderInCategory="5"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/itemConfig"
+        android:title="Configuración"
+        android:orderInCategory="6"
+        app:showAsAction="never"/>
 </menu>

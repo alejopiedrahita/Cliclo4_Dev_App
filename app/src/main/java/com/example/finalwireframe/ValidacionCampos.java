@@ -16,7 +16,7 @@ public class ValidacionCampos {
             Toast.makeText(context, "El campo no puede estar vacio", Toast.LENGTH_SHORT).show();
             return false;
         }else {
-            Pattern p = Pattern.compile("[a-zA-Z]{3,}");
+            Pattern p = Pattern.compile("[a-zA-Z0-9 ]{3,}");
             Matcher matcher1 = p.matcher(nombreLugar);
             Matcher matcher2 = p.matcher(tipoPatrimonio);
             Matcher matcher3 = p.matcher(keyWords);

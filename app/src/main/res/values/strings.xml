@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">finalWireframe</string>
+    <string name="empty_field">Tiene campos vacíos</string>
+    <string name="character_field">Carácter o Longitud no permitidos</string>
+    <string-array name="type_heritage">
+        <item>Patrimonio Mueble</item>
+        <item>Patrimonio Inmueble</item>
+    </string-array>
 </resources>
