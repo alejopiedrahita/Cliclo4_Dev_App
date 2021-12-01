@@ -1,8 +1,6 @@
 package com.example.finalwireframe;
 
-
-public class DataProcess {
-
+public class DataProcess{
     private int prefix = 1000;
 
     public String generadorEtiqueta(String nombreLugar, String tipoPatrimonio) {

@@ -51,6 +51,7 @@ public class RegisterPlace extends MenuBar {
         spnHeritageType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Capturar item seleccionado
                 heritageType = (String) spnHeritageType.getAdapter().getItem(position);
             }
 

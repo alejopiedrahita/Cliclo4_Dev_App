@@ -49,27 +49,25 @@
         app:layout_constraintTop_toBottomOf="@+id/txtKeyTag" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnScanner"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/bqrimg"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnKeyTag" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/bqrcam"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11"
+        app:layout_constraintTop_toBottomOf="@+id/btnKeyTag"
+        tools:ignore="SpeakableTextPresentCheck"
         tools:text="" />
+
+    <TextView
+        android:id="@+id/txtBarCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnScanner" />
 
 </android.support.constraint.ConstraintLayout>
