@@ -12,7 +12,7 @@ public class ValidacionCampos {
 
     // Validar registro de lugares
     public boolean formRegistros(String nombreLugar, String tipoPatrimonio, String keyWords, String keyTag, String ubicacion) {
-        if(nombreLugar.isEmpty() || tipoPatrimonio.isEmpty() || keyWords.isEmpty() || keyTag.isEmpty() || ubicacion.isEmpty()) {
+        if(nombreLugar.isEmpty() || tipoPatrimonio.isEmpty() || keyWords.isEmpty() /*|| keyTag.isEmpty()*/ || ubicacion.isEmpty()) {
             Toast.makeText(context, "El campo no puede estar vacio", Toast.LENGTH_SHORT).show();
             return false;
         }else {
@@ -20,11 +20,10 @@ public class ValidacionCampos {
             Matcher matcher1 = p.matcher(nombreLugar);
             Matcher matcher2 = p.matcher(tipoPatrimonio);
             Matcher matcher3 = p.matcher(keyWords);
-            Matcher matcher4 = p.matcher(keyTag);
-            Matcher matcher5 = p.matcher(ubicacion);
+            //Matcher matcher4 = p.matcher(keyTag);
+            //Matcher matcher5 = p.matcher(ubicacion);
 
-            if(matcher1.matches() && matcher2.matches() && matcher3.matches() && matcher4.matches() && matcher5.matches()) {
-                Toast.makeText(context, "Registro éxitoso", Toast.LENGTH_SHORT).show();
+            if(matcher1.matches() && matcher2.matches() && matcher3.matches() /*&& matcher4.matches() && matcher5.matches()*/) {
                 return true;
             }else {
                 Toast.makeText(context, "El campo debe tener mas de 3 letras  y no puede contener caracteres especiales", Toast.LENGTH_SHORT).show();
