@@ -52,9 +52,11 @@
 
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:secondaryProgressTint="@color/black"
                 android:rating="0" />
 
         </LinearLayout>
@@ -107,9 +109,11 @@
 
             <RatingBar
                 android:id="@+id/ratingBar2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:secondaryProgressTint="@color/black"
                 android:rating="0" />
         </LinearLayout>
     </LinearLayout>
@@ -160,9 +164,11 @@
 
             <RatingBar
                 android:id="@+id/ratingBar3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:secondaryProgressTint="@color/black"
                 android:rating="0" />
         </LinearLayout>
 
@@ -216,6 +222,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:secondaryProgressTint="@color/black"
                 android:rating="0" />
         </LinearLayout>
     </LinearLayout>
