@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class RegisterPlace extends MenuBar {
@@ -22,6 +23,7 @@ public class RegisterPlace extends MenuBar {
     private String heritageType;
     private ValidacionCampos vf;
     private DataProcess dp;
+    private Map map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +41,11 @@ public class RegisterPlace extends MenuBar {
         // Inicializar clases
         vf = new ValidacionCampos();
         dp  = new DataProcess();
+        map = new Map();
 
-        // Inhabilitar campo
+        // Inhabilitar campo de etiqueta
         txtKeyTagName.setEnabled(false);
+        txtKeyTagName.setText("");
 
         // Lista desplegable
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.type_heritage, android.R.layout.simple_list_item_1);
@@ -51,7 +55,7 @@ public class RegisterPlace extends MenuBar {
         spnHeritageType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Capturar item seleccionado
+                // Capturar item seleccionado de la lista desplegable
                 heritageType = (String) spnHeritageType.getAdapter().getItem(position);
             }
 
@@ -64,20 +68,29 @@ public class RegisterPlace extends MenuBar {
         btnRegisterNewPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener datos e instanciar clase DataProcess
+                // Obtener datos de la vista
                 String placeName = txtPlaceName.getText().toString();
-                String label = dp.generadorEtiqueta(placeName, heritageType);
-
-                // Asignar etiqueta al lugar
-                txtKeyTagName.setText(label);
-
-                // Obtener el resto de datos del lugar y validar campos
                 String keyWord = txtKeyWordName.getText().toString();
                 String keyTag = txtKeyTagName.getText().toString();
                 String locationPlace = txtLocationPlace.getText().toString();
 
+                // Validar campos
                 vf.showToastMethod(RegisterPlace.this);
-                vf.formRegistros(placeName, heritageType, keyWord, keyTag, locationPlace);;
+                boolean fields = vf.formRegistros(placeName, heritageType, keyWord, keyTag, locationPlace);
+
+                if(fields) {
+                    // Validar coordenadas
+                    boolean coordiantes = map.coordenadasLimites(locationPlace);
+                    if(coordiantes) {
+                        // Asignar etiqueta
+                        String label = dp.generadorEtiqueta(placeName, heritageType);
+                        txtKeyTagName.setText(label);
+                        Toast.makeText(RegisterPlace.this, "Registro Éxitoso", Toast.LENGTH_SHORT).show();
+                        //map.convertirUbicacion(locationPlace);
+                    }else {
+                        Toast.makeText(RegisterPlace.this, "Coordenas incorrectas", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
     }
