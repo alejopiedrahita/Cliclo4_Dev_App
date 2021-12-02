@@ -28,6 +28,10 @@ public class Home extends MenuBar implements View.OnClickListener {
                 Intent intentReader = new Intent(Home.this, ReaderCode.class);
                 startActivity(intentReader);
                 break;
+            case R.id.btnFavoritePlaces:
+                Intent intentFavorite = new Intent(Home.this, FavoritePlaces.class);
+                startActivity(intentFavorite);
+                break;
         }
     }
 
