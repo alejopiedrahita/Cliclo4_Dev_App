@@ -1,6 +1,5 @@
 package com.example.finalwireframe;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +13,6 @@ public class FindPlace extends MenuBar {
     // Declarar atributos
     private EditText txtKeyWords;
     private Button btnKeyWords;
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +47,7 @@ public class FindPlace extends MenuBar {
         return true;
     }
 
+    // Ocultar opcion menu
     public boolean invalidateOptionsMenu(Menu menu) {
         menu.findItem(R.id.itemFindPlace).setVisible(false);
         return true;

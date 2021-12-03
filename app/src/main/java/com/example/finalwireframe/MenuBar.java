@@ -36,6 +36,10 @@ public class MenuBar extends AppCompatActivity {
                 intent = new Intent(this, ReaderCode.class);
                 startActivity(intent);
                 return super.onOptionsItemSelected(item);
+            case R.id.itemFavoritePlaces:
+                intent = new Intent(this, FavoritePlaces.class);
+                startActivity(intent);
+                return super.onOptionsItemSelected(item);
             default:
                 return super.onOptionsItemSelected(item);
         }
