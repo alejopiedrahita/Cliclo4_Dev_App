@@ -25,7 +25,63 @@ public class Map {
     }
 
     public String convertirUbicacion(String ubicacion) {
-        return null;
-    }
 
+        //12.4444, -718052
+
+        // convirtiendo latitude: si +, norte / si -, sur
+        String[] coordinates = ubicacion.split(",");
+        double latitude = Double.parseDouble(coordinates[0]);
+        double longitude = Double.parseDouble((coordinates[1]));
+        String orientacionLat;
+        String orientacionLong;
+
+        //latitud indica norte o sur, si es negative = sur, sino norte
+        // longitud este oeste : si positiva = este sino oeste
+
+        if(latitude < 0 ){
+            orientacionLat = "S"; // sur
+        }
+        else{
+            orientacionLat = "N";// Norte
+        }
+
+        if(longitude < 0 ){
+            orientacionLong = "O"; // oeste
+        }
+        else{
+            orientacionLong = "E"; //este
+        }
+
+
+        String[] latitudeInfo = String.valueOf(latitude).split("\\.");
+        double gradosLat = Double.parseDouble(latitudeInfo[0]);
+        double minutosLat = Double.parseDouble(latitudeInfo[1]) * 0.0060;
+
+        String[] minutesInfo = String.valueOf(minutosLat).split("\\.");
+        double minutosTMP = Double.parseDouble(minutesInfo[0]);
+        double segundosTMP = Double.parseDouble(minutesInfo[1]) * 0.060;
+
+        String latConverted = gradosLat + "° " + minutosTMP + "\' " + segundosTMP + "\"";
+
+        // convirtiendo longitude
+
+        String[] longitudeInfo = String.valueOf(longitude).split("\\.");
+        double gradosLong = Double.parseDouble(longitudeInfo[0]);
+        double minutosLong = Double.parseDouble(longitudeInfo[1]) * 0.0060;
+
+        String[] minuteInfo = String.valueOf(minutosLong).split("\\.");
+        double minutoTMP = Double.parseDouble(minuteInfo[0]);
+        double segundoTMP = Double.parseDouble(minuteInfo[1]) * 0.060;
+
+        String longConverted = gradosLong + "° " + minutoTMP + "\' " + segundoTMP + "\"";
+
+        // concatenando
+
+        String convertedLocation = latConverted + orientacionLat +", " + longConverted + orientacionLong;
+
+
+
+
+        return convertedLocation;
+    }
 }
