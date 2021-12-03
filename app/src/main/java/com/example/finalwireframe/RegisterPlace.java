@@ -74,8 +74,12 @@ public class RegisterPlace extends MenuBar {
                 String keyTag = txtKeyTagName.getText().toString();
                 String locationPlace = txtLocationPlace.getText().toString();
 
+
                 // Validar campos
                 vf.showToastMethod(RegisterPlace.this);
+
+                map.convertirUbicacion(locationPlace);
+
                 boolean fields = vf.formRegistros(placeName, heritageType, keyWord, keyTag, locationPlace);
 
                 if(fields) {
