@@ -20,7 +20,6 @@ public class ReaderCode extends MenuBar implements View.OnClickListener{
     private EditText txtKeyTag;
     private Button btnKeyTag, btnScanner;
     private TextView txtBarCode;
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,20 +35,8 @@ public class ReaderCode extends MenuBar implements View.OnClickListener{
         // Asociar eventos
         btnKeyTag.setOnClickListener(this::onClick);
         btnScanner.setOnClickListener(this::onClick);
-
-        // Crear eventos
-        /*btnKeyTag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Obtener datos de la vista
-                String keyTag = txtKeyTag.getText().toString();
-                // Instanciar clase e invocar métodos
-                ValidacionCampos vf = new ValidacionCampos();
-                vf.showToastMethod(ReaderCode.this);
-                vf.formEtiqueta(keyTag);
-            }
-        });*/
     }
+
     // Eventos
     public void proccessEvents(int key) {
         switch (key) {
@@ -76,16 +63,19 @@ public class ReaderCode extends MenuBar implements View.OnClickListener{
         return true;
     }
 
+    // Ocultar opcion menu
     public boolean invalidateOptionsMenu(Menu menu) {
         menu.findItem(R.id.itemReaderCode).setVisible(false);
         return true;
     }
 
+    // Asociar eventos por ID
     @Override
     public void onClick(View v) {
         proccessEvents(v.getId());
     }
 
+    // Scanear Barcode - QR
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

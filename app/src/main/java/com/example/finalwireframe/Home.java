@@ -17,20 +17,20 @@ public class Home extends MenuBar implements View.OnClickListener {
     public void proccessEvents(int key) {
         switch (key) {
             case R.id.btnRegisterPlace:
-                Intent intentRegister = new Intent(Home.this, RegisterPlace.class);
-                startActivity(intentRegister);
+                intent = new Intent(Home.this, RegisterPlace.class);
+                startActivity(intent);
                 break;
             case R.id.btnFindPlace:
-                Intent intentFind = new Intent(Home.this, FindPlace.class);
-                startActivity(intentFind);
+                intent = new Intent(Home.this, FindPlace.class);
+                startActivity(intent);
                 break;
             case R.id.btnReaderCode:
-                Intent intentReader = new Intent(Home.this, ReaderCode.class);
-                startActivity(intentReader);
+                intent = new Intent(Home.this, ReaderCode.class);
+                startActivity(intent);
                 break;
             case R.id.btnFavoritePlaces:
-                Intent intentFavorite = new Intent(Home.this, FavoritePlaces.class);
-                startActivity(intentFavorite);
+                intent = new Intent(Home.this, FavoritePlaces.class);
+                startActivity(intent);
                 break;
         }
     }
@@ -53,6 +53,7 @@ public class Home extends MenuBar implements View.OnClickListener {
         btnFavoritePlaces.setOnClickListener(this::onClick);
     }
 
+    // Asociar eventos por ID
     @Override
     public void onClick(View v) {
         proccessEvents(v.getId());
@@ -66,8 +67,13 @@ public class Home extends MenuBar implements View.OnClickListener {
         return true;
     }
 
+    // Ocultar opcion menu
     public boolean invalidateOptionsMenu(Menu menu) {
         menu.findItem(R.id.itemHome).setVisible(false);
+        menu.findItem(R.id.itemRegisterPlace).setVisible(false);
+        menu.findItem(R.id.itemFindPlace).setVisible(false);
+        menu.findItem(R.id.itemReaderCode).setVisible(false);
+        menu.findItem(R.id.itemFavoritePlaces).setVisible(false);
         return true;
     }
 }

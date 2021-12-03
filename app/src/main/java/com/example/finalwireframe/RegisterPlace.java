@@ -103,6 +103,7 @@ public class RegisterPlace extends MenuBar {
         return true;
     }
 
+    // Ocultar opcion menu
     public boolean invalidateOptionsMenu(Menu menu) {
         menu.findItem(R.id.itemRegisterPlace).setVisible(false);
         return true;
