@@ -54,32 +54,38 @@ public class Map {
 
 
         String[] latitudeInfo = String.valueOf(latitude).split("\\.");
-        double gradosLat = Double.parseDouble(latitudeInfo[0]);
+        int gradosLat = Integer.parseInt(latitudeInfo[0]);
         double minutosLat = Double.parseDouble(latitudeInfo[1]) * 0.0060;
 
-        String[] minutesInfo = String.valueOf(minutosLat).split("\\.");
-        double minutosTMP = Double.parseDouble(minutesInfo[0]);
-        double segundosTMP = Double.parseDouble(minutesInfo[1]) * 0.060;
+        if (gradosLat < 0 ){
+            gradosLat = gradosLat * -1;
+        }
 
-        String latConverted = gradosLat + "° " + minutosTMP + "\' " + segundosTMP + "\"";
+        String[] minutesInfo = String.valueOf(minutosLat).split("\\.");
+        int minutosTMP = Integer.parseInt(minutesInfo[0]);
+        int segundosTMP = Integer.parseInt(minutesInfo[1]) * 60 / 1000;
+
+        String latConverted = gradosLat + "°" + minutosTMP +"\'" + segundosTMP + "\"";
 
         // convirtiendo longitude
 
         String[] longitudeInfo = String.valueOf(longitude).split("\\.");
-        double gradosLong = Double.parseDouble(longitudeInfo[0]);
+        int gradosLong = Integer.parseInt(longitudeInfo[0]);
         double minutosLong = Double.parseDouble(longitudeInfo[1]) * 0.0060;
 
-        String[] minuteInfo = String.valueOf(minutosLong).split("\\.");
-        double minutoTMP = Double.parseDouble(minuteInfo[0]);
-        double segundoTMP = Double.parseDouble(minuteInfo[1]) * 0.060;
+        if (gradosLong < 0 ){
+            gradosLong = gradosLong * -1;
+        }
 
-        String longConverted = gradosLong + "° " + minutoTMP + "\' " + segundoTMP + "\"";
+        String[] minuteInfo = String.valueOf(minutosLong).split("\\.");
+        int minutoTMP = Integer.parseInt(minuteInfo[0]);
+        int segundoTMP = Integer.parseInt(minuteInfo[1]) * 60 / 1000;
+
+        String longConverted = gradosLong +"°"+ minutoTMP +"\'"+ segundoTMP +"\"";
 
         // concatenando
 
-        String convertedLocation = latConverted + orientacionLat +", " + longConverted + orientacionLong;
-
-
+        String convertedLocation = latConverted + orientacionLat +", "+ longConverted + orientacionLong;
 
 
         return convertedLocation;
