@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 public class Map {
 
+    // este es un cambio de prueba
+
     public boolean coordenadasLimites(String ubicacion) {
         String regex = "^(-?\\d+(\\.\\d+)?),\\s*(-?\\d+(\\.\\d+)?)$";
         Pattern pattern = Pattern.compile(regex);
